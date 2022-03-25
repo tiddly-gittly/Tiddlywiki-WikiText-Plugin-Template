@@ -20,7 +20,7 @@ There are some scripts you can run to boost your development.
 
 After `npm i`:
 
-- `npm run dev-demo` to setup the demo site locally. Rerun this command and refresh browser to see changes to local tiddlers.
+- `npm run dev-demo` to setup the demo site locally. Re-run this command and refresh browser to see changes to local tiddlers.
 - `npm run dev` to pack the plugin in the `dist/` directory.
 
 ## After the plugin is complete
