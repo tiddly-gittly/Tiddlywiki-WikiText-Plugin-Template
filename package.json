@@ -15,7 +15,7 @@
     "fs-extra": "10.0.1",
     "github-action-ts-run-api": "2.0.0",
     "serve": "13.0.2",
-    "tiddlywiki": "5.2.1",
+    "tiddlywiki": "5.2.2",
     "tw5-plugin-packer": "0.0.10",
     "zx": "6.0.7"
   }
