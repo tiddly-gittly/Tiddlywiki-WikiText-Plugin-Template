@@ -7,12 +7,12 @@ This template will help you automatically package zipped multiple-file plugin fo
 ### Basic
 
 1. update `title`, `author` and `description` in the [src/plugin.info](src/plugin.info).
-1. write your plugin tiddlers in the [src/](src/) directory.
-1. tid files just put in the src directory, they will be copy to the plugin automatically.
+2. write your plugin tiddlers in the [src/](src/) directory.
+3. tid files just put in the src directory, they will be copy to the plugin automatically.
    1. You can use folder to organize the files, like `src/filters/` to place the filter tiddlers, and that structure will be preserved in the nodejs multiple-file plugin
-   1. In the JSON plugin, the structure will strictly follow the tiddler title.
-1. update demo site tiddlers in the [demo/](demo/) directory.
-1. update this readme.md
+   2. In the JSON plugin, the structure will strictly follow the tiddler title.
+4. update demo site tiddlers in the [demo/](demo/) directory.
+5. update this readme.md
 
 ## During development
 
@@ -20,8 +20,8 @@ There are some scripts you can run to boost your development.
 
 After `npm i`:
 
-- `npm run dev-demo` to setup the demo site locally. Re-run this command and refresh browser to see changes to local tiddlers.
-- `npm run dev` to pack the plugin in the `dist/` directory.
+- `npm run dev` to auto pack the plugin and run a demo site. Your change in the src directory will automatically refresh the site.
+- `npm run dev-html` to see demo site with packed plugin after you finish your development, this can be your final check, this runs slower than `npm run dev`
 
 ## After the plugin is complete
 
