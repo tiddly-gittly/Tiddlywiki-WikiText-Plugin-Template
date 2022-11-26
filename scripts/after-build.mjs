@@ -1,8 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import archiver from 'archiver';
 
 const pluginInfo = fs.readJsonSync('src/plugin.info');
-const pluginTitle = pluginInfo.title;
-const [_, __, author, name] = pluginTitle.split('/');
+const [_, __, author, name] = pluginInfo.title.split('/');
+const pluginTitle = `${author}/${name}`;
 
 const repoDir = path.join(__dirname, '..');
 const distDir = path.join(__dirname, '..', 'dist');
@@ -10,7 +15,7 @@ const nodejsPluginOutDir = path.join(distDir, 'plugins', author, name);
 // cross platform cp -r ${repoDir}/src/ ${nodejsPluginOutDir}/
 const copyOptions = {
   filter: (src, dest) => {
-    if (!src.endsWith('.ts')) {
+    if (!(src.endsWith('.ts') || src.endsWith('.tsx'))) {
       // Return true to copy the item
       return true;
     }

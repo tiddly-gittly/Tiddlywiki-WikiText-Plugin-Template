@@ -1,3 +1,9 @@
+/* eslint-disable unicorn/prevent-abbreviations */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { cd } from 'zx';
 
 /**
@@ -7,13 +13,16 @@ const pluginInfo = fs.readJsonSync('src/plugin.info');
 const [_, __, author, name] = pluginInfo.title.split('/');
 const pluginTitle = `${author}/${name}`;
 
-const repoDir = path.resolve(__dirname, '..');
-const distDir = path.join(repoDir, 'dist');
+const repoDirectory = path.resolve(__dirname, '..');
+const distDirectory = path.resolve(repoDirectory, 'dist');
 const jsonPluginFileName = `$__plugins_${pluginTitle.replace('/', '_')}.json`;
 // copy demo
-await fs.copy(path.join(repoDir, 'demo'), distDir);
+await fs.copy(path.join(repoDirectory, 'demo'), distDirectory);
 // copy json plugin
-await fs.copy(path.join(distDir, 'out', jsonPluginFileName), path.join(distDir, 'tiddlers', jsonPluginFileName));
+await fs.copy(path.join(distDirectory, 'out', jsonPluginFileName), path.join(distDirectory, 'tiddlers', jsonPluginFileName));
 
-cd(distDir);
-await $`tiddlywiki ${distDir} --build index`;
+/**
+ * Make demo html file
+ */
+cd(distDirectory);
+await $`tiddlywiki ${distDirectory} --build index`;
