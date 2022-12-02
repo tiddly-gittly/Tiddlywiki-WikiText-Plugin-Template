@@ -18,6 +18,8 @@ This template will help you automatically package zipped multiple-file plugin fo
 
 ## Development
 
+See [tiddly-gittly/Tiddlywiki-WikiText-Plugin-Template](https://github.com/tiddly-gittly/Tiddlywiki-WikiText-Plugin-Template) for detail.
+
 There are some scripts you can run to boost your development.
 
 After `npm i`:
@@ -35,4 +37,6 @@ Enable github action in your repo (in your github repo - setting - action - gene
 
 You will get a Github Pages demo site automatically after publish. If it is 404, you may need to manually enable Github Pages in your github repo:
 
-Settings - Pages (on left side) - Source - choose `gh-pages` branch
+Settings - Pages (on left side) - Build and deployment- Source - choose `"Github Actions"`
+
+Next time you trigger a publish, the site will be updated. You can see the site link in Settings - Pages
